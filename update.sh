@@ -1,5 +1,7 @@
 clear
-sudo rmdir /var/www/html/intranet
+sudo rm -r /var/www/html/intranet
 echo "Deleting Previous Directory..."
 sudo git clone https://github.com/slsgaming-net/intranet /var/www/html/intranet
-echo "Cloned Repo!"&
+echo "Cloned Repo!"
+sleep 3
+clear

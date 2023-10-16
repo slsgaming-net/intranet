@@ -7,4 +7,5 @@ sleep 3
 wget https://raw.githubusercontent.com/slsgaming-net/intranet/main/update.sh
 clear
 sudo sh update.sh
-sleep 3 clear
+sleep 3 
+clear
