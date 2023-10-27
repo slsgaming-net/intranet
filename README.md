@@ -1,2 +1,4 @@
 ## sls intranet v1
- last updated 9-24-23
+ README last updated 10-24-23
+ 
+ github pages url: https://slsgaming-net.github.io/intranet/
