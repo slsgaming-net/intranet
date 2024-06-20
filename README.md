@@ -2,7 +2,7 @@
 ##  README 
 *last updated 5-26-24*
 
-==github pages url: https://slsgaming-net.github.io/intranet/==
+==github pages url: https://slsgaming-net.github.io/intranet
 
 ---
 
