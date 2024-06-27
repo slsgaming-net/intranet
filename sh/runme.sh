@@ -24,10 +24,8 @@ case $CHOICE in
         1)
             echo "Updating Website..."
 			sudo sh update-website.sh
-            ;;
         2)
             echo "Coming Soon..."
-            ;;
         3)
-            ;;
+            esac
 esac
