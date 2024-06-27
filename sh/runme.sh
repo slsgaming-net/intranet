@@ -9,8 +9,11 @@ show_menu() {
 
 # Function to update the website
 update_website() {
-    echo "Updating website..."
+    clear
+	echo "Updating website..."
     # Add your website update commands here
+	sudo sh update-website.sh
+	clear
     echo "Website updated successfully!"
 }
 
@@ -18,6 +21,9 @@ update_website() {
 update_server() {
     echo "Updating server..."
     # Add your server update commands here
+	sudo apt-get update 
+	sudo apt-get upgrade -y
+	clear
     echo "Server updated successfully!"
 }
 
