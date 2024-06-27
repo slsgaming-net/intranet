@@ -1,23 +1,43 @@
 #!/bin/bash
-# Bash Menu Script Example
 
-PS3='Please enter your choice: '
-options=("Update Website" "Update GitHub" "Option 3" "Quit")
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Update Website")
-            ./update.sh
+# Function to display the menu
+show_menu() {
+    echo "1) Update Website"
+    echo "2) Update Server"
+    echo "3) Exit"
+}
+
+# Function to update the website
+update_website() {
+    echo "Updating website..."
+    # Add your website update commands here
+    echo "Website updated successfully!"
+}
+
+# Function to update the server
+update_server() {
+    echo "Updating server..."
+    # Add your server update commands here
+    echo "Server updated successfully!"
+}
+
+# Main script logic
+while true; do
+    show_menu
+    read -p "Enter your choice: " choice
+    case $choice in
+        1)
+            update_website
             ;;
-        "Update GitHub")
-            # ./script2.sh
+        2)
+            update_server
             ;;
-        "Option 3")
-            # ./script3.sh
+        3)
+            echo "Exiting..."
+            exit 0
             ;;
-        "Quit")
-            break
+        *)
+            echo "Invalid choice, please try again."
             ;;
-        *) echo "invalid option $REPLY";;
     esac
 done
