@@ -1,16 +1,23 @@
 #!/bin/bash
+# Bash Menu Script Example
 
-items=(1 "Update Website"
-       2 "Update SH")
-
-while choice=$(dialog --title "$TITLE" \
-                 --menu "Please select" 10 40 3 "${items[@]}" \
-                 2>&1 >/dev/tty)
-    do
-    case $choice in
-        1) sudo sh update.sh # some action on 1
-        2) echo "lol"
-        *) ;; # some action on other
+PS3='Please enter your choice: '
+options=("Update Website" "Update GitHub" "Option 3" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Update Website")
+            ./update.sh
+            ;;
+        "Update GitHub")
+            # ./script2.sh
+            ;;
+        "Option 3")
+            # ./script3.sh
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
     esac
 done
-clear # clear after user pressed Cancel
