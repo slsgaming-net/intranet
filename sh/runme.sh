@@ -7,7 +7,8 @@ show_menu() {
 	echo "------------------------"
     echo "1) Update Website"
     echo "2) Update Server"
-    echo "3) Exit"
+	echo "3) Install BYOND (Ubuntu)"
+    echo "4) Exit"
 }
 
 # Function to update the website
@@ -15,7 +16,7 @@ update_website() {
     clear
 	echo "Updating website..."
     # Add your website update commands here
-	sudo sh update-website.sh
+	sudo sh update.sh
 	clear
     echo "Website updated successfully!"
 }
@@ -30,6 +31,17 @@ update_server() {
     echo "Server updated successfully!"
 }
 
+# Function to install byond on ubuntu
+update_server() {
+	update_server
+    echo "Installing byond..."
+    # Add your server update commands here
+	echo "Insert BYOND install here..."
+	clear
+    echo "BYOND installed sucessfully... testing version"
+	sudo DreamDaemon -version
+}
+
 # Main script logic
 while true; do
     show_menu
@@ -42,6 +54,9 @@ while true; do
             update_server
             ;;
         3)
+            install_byond
+            ;;
+        4)
             echo "Exiting..."
             exit 0
 			clear
