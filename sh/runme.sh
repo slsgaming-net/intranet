@@ -2,6 +2,9 @@
 
 # Function to display the menu
 show_menu() {
+	echo "------------------------"
+	echo "|SLS INTRANET MENU 1.0.1|"
+	echo "------------------------"
     echo "1) Update Website"
     echo "2) Update Server"
     echo "3) Exit"
@@ -41,6 +44,7 @@ while true; do
         3)
             echo "Exiting..."
             exit 0
+			clear
             ;;
         *)
             echo "Invalid choice, please try again."
