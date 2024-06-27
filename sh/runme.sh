@@ -1,51 +1,47 @@
 #!/bin/bash
 
-# Function to display the menu
-show_menu() {
-	echo "------------------------"
-	echo "|SLS INTRANET MENU 1.0.1|"
-	echo "------------------------"
-    echo "1) Update Website"
-    echo "2) Update Server"
-	echo "3) Install BYOND (Ubuntu)"
-    echo "4) Exit"
-}
-
 # Function to update the website
 update_website() {
-    clear
-	echo "Updating website..."
+    echo "Updating Website..."
     # Add your website update commands here
-	sudo sh update.sh
-	clear
     echo "Website updated successfully!"
 }
 
 # Function to update the server
 update_server() {
-    echo "Updating server..."
-    # Add your server update commands here
-	sudo apt-get update 
-	sudo apt-get upgrade -y
-	clear
+    echo "Updating Server..."
+    sudo apt-get update && sudo apt-get upgrade -y
     echo "Server updated successfully!"
 }
 
-# Function to install byond on ubuntu
+# Function to install BYOND
 install_byond() {
-	install_byond
-    echo "Installing byond..."
-    # Add your server update commands here
-	echo "Insert BYOND install here..."
-	clear
-    echo "BYOND installed sucessfully... testing version"
-	sudo DreamDaemon -version
+    echo "Installing BYOND..."
+    # Add your BYOND installation commands here
+    wget http://www.byond.com/download/build/514/514.1585_byond_linux.zip
+    unzip 514.1585_byond_linux.zip
+    cd byond
+    sudo make install
+    echo "BYOND installed successfully!"
 }
 
-# Main script logic
+# Function to reboot the server
+reboot_server() {
+    echo "Rebooting Server..."
+    sudo reboot
+}
+
+# Display menu options
 while true; do
-    show_menu
-    read -p "Enter your choice: " choice
+    echo "Please choose an option:"
+    echo "1. Update Website"
+    echo "2. Update Server"
+    echo "3. Install BYOND"
+    echo "4. Reboot Server"
+    echo "5. Exit"
+
+    read -p "Enter your choice [1-5]: " choice
+
     case $choice in
         1)
             update_website
@@ -57,12 +53,14 @@ while true; do
             install_byond
             ;;
         4)
+            reboot_server
+            ;;
+        5)
             echo "Exiting..."
             exit 0
-			clear
             ;;
         *)
-            echo "Invalid choice, please try again."
+            echo "Invalid option. Please try again."
             ;;
     esac
 done
