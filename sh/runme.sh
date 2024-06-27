@@ -32,8 +32,8 @@ update_server() {
 }
 
 # Function to install byond on ubuntu
-update_server() {
-	update_server
+install_byond() {
+	install_byond
     echo "Installing byond..."
     # Add your server update commands here
 	echo "Insert BYOND install here..."
