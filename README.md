@@ -3,9 +3,11 @@ title: 'README.md'
 ---
 # sls intranet v1.0.2
 ##  README 
-*last updated 6-27-24*
+*last updated 7-6-24*
 
 github pages url: https://slsgaming-net.github.io/intranet
+
+hosted url: http://s1.playsls.com
 
 ---
 

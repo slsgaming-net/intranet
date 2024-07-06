@@ -1,0 +1,6 @@
+https://v.firebog.net/hosts/Easylist.txt
+https://big.oisd.nl
+https://small.oisd.nl
+https://blocklistproject.github.io/Lists/ads.txt
+https://blocklistproject.github.io/Lists/scam.txt
+https://adaway.org/hosts.txt
