@@ -3,8 +3,12 @@
 # Function to update the website
 update_website() {
     echo "Updating Website..."
+	sudo cd /home/itsjusallah
+	sudo sh update.sh
     # Add your website update commands here
     echo "Website updated successfully!"
+	sleep(3)
+	clear
 }
 
 # Function to update the server
@@ -22,18 +26,24 @@ install_byond() {
     unzip 514.1585_byond_linux.zip
     cd byond
     sudo make install
-    echo "BYOND installed successfully!"
+    echo "BYOND installed successfully.... testing"
+	sudo DreamDaemon --version
 }
 
 # Function to reboot the server
 reboot_server() {
-    echo "Rebooting Server..."
+    echo "Rebooting Server in 30 seconds..."
+	sleep(30)
     sudo reboot
 }
 
 # Display menu options
 while true; do
-    echo "Please choose an option:"
+	clear
+	echo "------------------------"
+	echo "|SLS INTRANET MENU 1.0.1|"
+	echo "------------------------"
+    echo "Please choose an option..."
     echo "1. Update Website"
     echo "2. Update Server"
     echo "3. Install BYOND"
