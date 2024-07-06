@@ -8,7 +8,12 @@ install_git() {
 	sudo apt-get install unzip
     echo "...Installed!"
 }
-
+# Function to clone sls intranet repo
+clone_repo() {
+    echo "Installing SLS Intranet Repo..."
+	wget https://raw.githubusercontent.com/slsgaming-net/intranet/main/sh/update-all.sh
+	sudo sh update-all.sh
+}
 # Function to install webmin
 install_webmin() {
     sudo sh install-webmin.sh
@@ -31,10 +36,11 @@ while true; do
 	echo "|SLS INTRANET SETUP v1|"
 	echo "-----------------------"
     echo "1. Install Git + Tools"
-    echo "2. Install Webmin"
-    echo "3. Install BYOND"
-    echo "4. Reboot Server"
-    echo "5. Exit"
+	echo "2. Clone SLS Intranet Repo"
+    echo "3. Install Webmin"
+    echo "4. Install BYOND"
+    echo "5. Reboot Server"
+    echo "6. Exit"
 
     read -p "Enter your choice [1-5]: " choice
 
@@ -43,15 +49,18 @@ while true; do
             install_git
             ;;
         2)
-            install_webmin
+            clone_repo
             ;;
         3)
-            install_byond
+            install_webmin
             ;;
         4)
-            reboot_server
+            install_byond
             ;;
         5)
+            reboot_server
+            ;;
+        6)
             echo "Exiting..."
             exit 0
             ;;
