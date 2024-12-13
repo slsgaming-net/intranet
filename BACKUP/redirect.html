@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+</head>
+<body>
+    <?php
+    // Check if the 'redirect' parameter exists in the URL
+    if (isset($_GET['redirect'])) {
+        // Get the 'redirect' parameter from the URL
+        $redirectUrl = $_GET['redirect'];
+
+        // Sanitize the URL to ensure it's a valid URL
+        $redirectUrl = filter_var($redirectUrl, FILTER_SANITIZE_URL);
+
+        // Validate the URL to ensure it's a valid URL
+        if (filter_var($redirectUrl, FILTER_VALIDATE_URL)) {
+            // Perform the redirection
+            header("Location: " . $redirectUrl);
+            exit();
+        } else {
+            // Invalid URL provided
+            echo "Invalid URL provided.";
+        }
+    } else {
+        // No 'redirect' parameter found
+        echo "No URL specified to redirect to.";
+    }
+    ?>
+</body>
+</html>
